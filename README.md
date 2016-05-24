@@ -15,14 +15,27 @@ npm install --save node-browser-environment
 ## Usage
 
 ```js
+// Setup global browser environment
 require('node-browser-environment')();
-```
 
-or if you're using ES6 modules
-
-```js
+// or if you're using ES6 modules
 import browserEnv from 'node-browser-environment';
 browserEnv();
+
+// Now you have access to a browser like environment:
+
+typeof document;
+// 'object'
+
+typeof window;
+// 'object'
+
+var div = document.createElement('div');
+// HTMLDivElement
+
+div instanceof HTMLElement
+// true
+
 ```
 
 ## License
