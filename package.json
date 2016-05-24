@@ -1,6 +1,6 @@
 {
   "name": "node-browser-environment",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Simulates a global browser environment using jsdom",
   "main": "src/index.js",
   "scripts": {
