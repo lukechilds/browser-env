@@ -12,3 +12,8 @@ test('Function should setup browser environment', t => {
   t.not(typeof navigator, 'undefined');
   t.not(typeof HTMLElement, 'undefined');
 });
+
+test('Function should return window instance', t => {
+  const returnValue = browserEnv();
+  t.is(returnValue, window);
+});
