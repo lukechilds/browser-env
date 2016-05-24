@@ -4,7 +4,8 @@
   "description": "Simulates a global browser environment using jsdom",
   "main": "src/index.js",
   "scripts": {
-    "test": "ava test"
+    "test": "nyc ava test",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,8 @@
     "jsdom": "^9.2.0"
   },
   "devDependencies": {
-    "ava": "^0.14.0"
+    "ava": "^0.14.0",
+    "coveralls": "^2.11.9",
+    "nyc": "^6.4.4"
   }
 }
