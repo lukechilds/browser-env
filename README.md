@@ -2,9 +2,11 @@
 
 Simulates a global browser environment using [`jsdom`](https://github.com/tmpvar/jsdom).
 
+This allows you to run browser modules in node with minimal or no effort. Can also be used to test browser modules with any node testing framework. Please note, only the DOM is simulated, if you want to run a module that requires more advanced browser features (like `localStorage`), you'll need to polyfill that seperately.
+
 > ❗️**Warning**
 >
-> This module adds global variables that would normally be present in a browser to the current node instance. This allows code that requires a browser environment to run in node, however as it's making global changes it may have adverse affects.
+> This module adds a lot of stuff to the global namepace, use with care.
 
 ## Install
 
