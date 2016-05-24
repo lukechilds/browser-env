@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/lukechilds/node-browser-environment/issues"
   },
-  "homepage": "https://github.com/lukechilds/node-browser-environment#readme"
+  "homepage": "https://github.com/lukechilds/node-browser-environment#readme",
+  "dependencies": {
+    "jsdom": "^9.2.0"
+  }
 }
