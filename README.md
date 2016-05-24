@@ -6,7 +6,7 @@ This allows you to run browser modules in node with minimal or no effort. Can al
 
 > ❗️**Warning**
 >
-> This module adds a lot of stuff to the global namepace, use with care.
+> This module adds a lot of stuff to the global namespace, use with care.
 
 ## Install
 
