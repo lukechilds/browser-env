@@ -4,7 +4,7 @@
   "description": "Simulates a global browser environment using jsdom",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava test"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,8 @@
   "homepage": "https://github.com/lukechilds/node-browser-environment#readme",
   "dependencies": {
     "jsdom": "^9.2.0"
+  },
+  "devDependencies": {
+    "ava": "^0.14.0"
   }
 }
