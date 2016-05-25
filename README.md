@@ -17,19 +17,15 @@ npm install --save node-browser-environment
 ## Usage
 
 ```js
-// Setup global browser environment
+// Init
 require('node-browser-environment')();
 
-// or if you're using ES6 modules
-import browserEnv from 'node-browser-environment';
-browserEnv();
-
-// Now you have access to a browser like environment:
-
-typeof document;
-// 'object'
+// Now you have access to a browser like environment in node:
 
 typeof window;
+// 'object'
+
+typeof document;
 // 'object'
 
 var div = document.createElement('div');
@@ -37,7 +33,31 @@ var div = document.createElement('div');
 
 div instanceof HTMLElement
 // true
+```
 
+By default everything in the `jsdom` window namespace is tacked on to nodes global namespace. If you want to trim this down you can pass an array of required properties:
+
+```js
+// Init
+require('node-browser-environment')(['window']);
+
+typeof window;
+// 'object'
+
+typeof document;
+// 'undefined'
+```
+
+You can of course also assign to a function:
+
+```js
+var browserEnv = require('node-browser-environment');
+browserEnv();
+
+// or
+
+import browserEnv from 'node-browser-environment';
+browserEnv();
 ```
 
 ## License
