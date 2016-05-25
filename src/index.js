@@ -1,10 +1,9 @@
-'use strict';
-var jsdom = require('jsdom').jsdom;
+import { jsdom } from 'jsdom';
 
-module.exports = function() {
+module.exports = () => {
   global.window = jsdom('<html><body></body></html>').defaultView;
-  
-  Object.keys(window).forEach(function(prop) {
+
+  Object.keys(window).forEach(prop => {
     if(typeof global[prop] === 'undefined') {
       global[prop] = window[prop];
     }
