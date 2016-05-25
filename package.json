@@ -2,10 +2,24 @@
   "name": "node-browser-environment",
   "version": "1.0.2",
   "description": "Simulates a global browser environment using jsdom",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "babel -d dist src",
+    "prebuild:map": "npm run prebuild",
+    "build:map": "babel --source-maps=true -d dist src",
+    "pretest": "npm run build:map",
     "test": "nyc ava test",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "prepublish": "npm run build"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "plugins": [
+      "add-module-exports"
+    ]
   },
   "repository": {
     "type": "git",
@@ -29,6 +43,9 @@
   },
   "devDependencies": {
     "ava": "^0.14.0",
+    "babel-cli": "^6.9.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.9.0",
     "coveralls": "^2.11.9",
     "nyc": "^6.4.4"
   }

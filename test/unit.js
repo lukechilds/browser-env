@@ -1,5 +1,5 @@
 import test from 'ava';
-import browserEnv from '../src';
+import browserEnv from '../dist';
 
 test('Function should setup browser environment', t => {
   t.is(typeof window, 'undefined');
