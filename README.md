@@ -35,7 +35,7 @@ div instanceof HTMLElement
 // true
 ```
 
-By default everything in the `jsdom` window namespace is tacked on to nodes global namespace. If you want to trim this down you can pass an array of required properties:
+By default everything in the `jsdom` window namespace is tacked on to the node global namespace. If you want to trim this down you can pass an array of required properties:
 
 ```js
 // Init
