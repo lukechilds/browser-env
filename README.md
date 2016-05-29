@@ -48,6 +48,16 @@ typeof document;
 // 'undefined'
 ```
 
+`node-browser-environment` checks if global properties already exist before setting them. This is to stop core node methods being overwritten such as `console`. If you want to force an overwrite of properties you can set the overwrite argument to true. This can only be done along with an array of properties:
+
+```js
+// Won't overwrite window if it already exists
+require('node-browser-environment')(['window']);
+
+// Will overwrite window if it already exists
+require('node-browser-environment')(['window'], true);
+```
+
 You can of course also assign to a function:
 
 ```js
