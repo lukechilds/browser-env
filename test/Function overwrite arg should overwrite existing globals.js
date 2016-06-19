@@ -3,13 +3,9 @@ import browserEnv from '../dist';
 
 test(t => {
   t.is(typeof window, 'undefined');
-  let returnValue = browserEnv();
+  const returnValue = browserEnv();
   t.is(returnValue, window);
-  returnValue = browserEnv();
+  const secondReturnValue = browserEnv();
   t.not(returnValue, window);
-  returnValue = browserEnv({
-    properties: ['window'],
-    overwrite: true
-  });
-  t.is(returnValue, window);
+  t.is(secondReturnValue, window);
 });
