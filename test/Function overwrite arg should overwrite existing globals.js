@@ -7,6 +7,9 @@ test(t => {
   t.is(returnValue, window);
   returnValue = browserEnv();
   t.not(returnValue, window);
-  returnValue = browserEnv(['window'], true);
+  returnValue = browserEnv({
+    properties: ['window'],
+    overwrite: true
+  });
   t.is(returnValue, window);
 });
