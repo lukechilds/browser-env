@@ -8,9 +8,8 @@ const protectedproperties = (() => {
     .filter(prop => global[prop]);
 })();
 
-module.exports = arg => {
-  const properties = arg instanceof Array ? arg : arg && arg.properties;
-  const window = jsdom('<html><body></body></html>').defaultView;
+module.exports = (properties = false, jsdomConfig = {}) => {
+  const window = jsdom('<html><body></body></html>', jsdomConfig).defaultView;
 
   Object
     .keys(window)
