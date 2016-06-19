@@ -1,6 +1,6 @@
 import { jsdom } from 'jsdom';
 
-module.exports = (arg) => {
+module.exports = arg => {
   const properties = arg instanceof Array ? arg : arg && arg.properties;
   const overwrite = arg && arg.overwrite;
   const window = jsdom('<html><body></body></html>').defaultView;
