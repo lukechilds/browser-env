@@ -35,7 +35,7 @@ div instanceof HTMLElement
 // true
 ```
 
-By default everything in the `jsdom` window namespace is tacked on to the node global namespace. If you want to trim this down you can pass an array of required properties:
+By default everything in the `jsdom` window namespace is tacked on to the node global namespace (excluding existing node properties e.g `console`, `setTimout`). If you want to trim this down you can pass an array of required properties:
 
 ```js
 // Init
@@ -48,14 +48,14 @@ typeof document;
 // 'undefined'
 ```
 
-`node-browser-environment` checks if global properties already exist before setting them. This is to stop core node methods being overwritten such as `console`. If you want to force an overwrite of properties you can set the overwrite argument to true. This can only be done along with an array of properties:
+You can also pass a config object straight through to `jsdom`. This can be done with or without specifying required properties.
 
 ```js
-// Won't overwrite window if it already exists
-require('node-browser-environment')(['window']);
+require('node-browser-environment')(['window'], { userAgent: userAgent });
 
-// Will overwrite window if it already exists
-require('node-browser-environment')(['window'], true);
+// or
+
+require('node-browser-environment')({ userAgent: userAgent });
 ```
 
 You can of course also assign to a function:
