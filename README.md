@@ -51,11 +51,11 @@ typeof document;
 You can also pass a config object straight through to `jsdom`. This can be done with or without specifying required properties.
 
 ```js
-require('node-browser-environment')(['window'], { userAgent: userAgent });
+require('node-browser-environment')(['window'], { userAgent: 'My User Agent' });
 
 // or
 
-require('node-browser-environment')({ userAgent: userAgent });
+require('node-browser-environment')({ userAgent: 'My User Agent' });
 ```
 
 You can of course also assign to a function:
