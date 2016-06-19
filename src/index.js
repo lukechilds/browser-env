@@ -8,7 +8,12 @@ const protectedproperties = (() => {
     .filter(prop => global[prop]);
 })();
 
-module.exports = (properties = false, jsdomConfig = {}) => {
+const getType = val => Object.prototype.toString.call(val);
+
+module.exports = (...args) => {
+  const properties = args.filter(arg => getType(arg) === '[object Array]')[0];
+  const jsdomConfig = args.filter(arg => getType(arg) === '[object Object]')[0];
+
   const window = jsdom('<html><body></body></html>', jsdomConfig).defaultView;
 
   Object
