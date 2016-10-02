@@ -43,7 +43,7 @@
   },
   "homepage": "https://github.com/lukechilds/node-browser-environment#readme",
   "dependencies": {
-    "jsdom": "9.5.0"
+    "jsdom": "9.6.0"
   },
   "devDependencies": {
     "ava": "^0.15.2",
