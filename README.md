@@ -12,6 +12,12 @@ This allows you to run browser modules in node with minimal or no effort. Can al
 npm install --save browser-env
 ```
 
+Or if you're just using for testing you'll probably want:
+
+```shell
+npm install --save-dev browser-env
+```
+
 ## Usage
 
 ```js
