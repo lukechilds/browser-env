@@ -1,6 +1,6 @@
 # browser-env [![Build Status](https://travis-ci.org/lukechilds/browser-env.svg?branch=master)](https://travis-ci.org/lukechilds/browser-env) [![Coverage Status](https://coveralls.io/repos/github/lukechilds/browser-env/badge.svg?branch=master)](https://coveralls.io/github/lukechilds/browser-env?branch=master)
 
-Simulates a global browser environment using [`jsdom`](https://github.com/tmpvar/jsdom).
+> Simulates a global browser environment using [`jsdom`](https://github.com/tmpvar/jsdom).
 
 Previously named `node-browser-environment`.
 
