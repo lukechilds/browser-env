@@ -1,4 +1,4 @@
-# node-browser-environment [![Build Status](https://travis-ci.org/lukechilds/node-browser-environment.svg?branch=master)](https://travis-ci.org/lukechilds/node-browser-environment) [![Coverage Status](https://coveralls.io/repos/github/lukechilds/node-browser-environment/badge.svg?branch=master)](https://coveralls.io/github/lukechilds/node-browser-environment?branch=master)
+# browser-env [![Build Status](https://travis-ci.org/lukechilds/browser-env.svg?branch=master)](https://travis-ci.org/lukechilds/browser-env) [![Coverage Status](https://coveralls.io/repos/github/lukechilds/browser-env/badge.svg?branch=master)](https://coveralls.io/github/lukechilds/browser-env?branch=master)
 
 Simulates a global browser environment using [`jsdom`](https://github.com/tmpvar/jsdom).
 
@@ -11,14 +11,14 @@ This allows you to run browser modules in node with minimal or no effort. Can al
 ## Install
 
 ```shell
-npm install --save node-browser-environment
+npm install --save browser-env
 ```
 
 ## Usage
 
 ```js
 // Init
-require('node-browser-environment')();
+require('browser-env')();
 
 // Now you have access to a browser like environment in node:
 
@@ -39,7 +39,7 @@ By default everything in the `jsdom` window namespace is tacked on to the node g
 
 ```js
 // Init
-require('node-browser-environment')(['window']);
+require('browser-env')(['window']);
 
 typeof window;
 // 'object'
@@ -51,22 +51,22 @@ typeof document;
 You can also pass a config object straight through to `jsdom`. This can be done with or without specifying required properties.
 
 ```js
-require('node-browser-environment')(['window'], { userAgent: 'My User Agent' });
+require('browser-env')(['window'], { userAgent: 'My User Agent' });
 
 // or
 
-require('node-browser-environment')({ userAgent: 'My User Agent' });
+require('browser-env')({ userAgent: 'My User Agent' });
 ```
 
 You can of course also assign to a function:
 
 ```js
-var browserEnv = require('node-browser-environment');
+var browserEnv = require('browser-env');
 browserEnv();
 
 // or
 
-import browserEnv from 'node-browser-environment';
+import browserEnv from 'browser-env';
 browserEnv();
 ```
 
