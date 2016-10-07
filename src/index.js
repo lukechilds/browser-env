@@ -17,11 +17,9 @@ const protectedproperties = (() => {
     .filter(prop => global[prop]);
 })();
 
-const getType = val => Object.prototype.toString.call(val);
-
 module.exports = (...args) => {
-  const properties = args.filter(arg => getType(arg) === '[object Array]')[0];
-  const userJsdomConfig = args.filter(arg => getType(arg) === '[object Object]')[0];
+  const properties = args.filter(arg => Array.isArray(arg))[0];
+  const userJsdomConfig = args.filter(arg => !Array.isArray(arg))[0];
 
   const jsdomConfig = Object.assign({}, userJsdomConfig, defaultJsdomConfig);
 
