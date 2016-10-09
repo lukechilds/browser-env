@@ -1,4 +1,5 @@
 import jsdom from 'jsdom';
+import clone from 'clone';
 
 const defaultJsdomConfig = {
   features: {
@@ -7,10 +8,8 @@ const defaultJsdomConfig = {
   }
 };
 
-const cloneObject = obj => JSON.parse(JSON.stringify(obj));
-
 const protectedproperties = (() => {
-  const window = jsdom.jsdom('<html><body></body></html>', cloneObject(defaultJsdomConfig)).defaultView;
+  const window = jsdom.jsdom('<html><body></body></html>', clone(defaultJsdomConfig)).defaultView;
 
   return Object
     .getOwnPropertyNames(window)
@@ -23,7 +22,7 @@ module.exports = (...args) => {
 
   const jsdomConfig = Object.assign({}, userJsdomConfig, defaultJsdomConfig);
 
-  const window = jsdom.jsdom('<html><body></body></html>', cloneObject(jsdomConfig)).defaultView;
+  const window = jsdom.jsdom('<html><body></body></html>', clone(jsdomConfig)).defaultView;
 
   Object
     .getOwnPropertyNames(window)
