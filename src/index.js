@@ -13,7 +13,7 @@ const protectedproperties = (() => {
 
   return Object
     .getOwnPropertyNames(window)
-    .filter(prop => global[prop]);
+    .filter(prop => typeof global[prop] !== 'undefined');
 })();
 
 module.exports = (...args) => {
