@@ -8,21 +8,22 @@ const defaultJsdomConfig = {
   }
 };
 
-const protectedproperties = (() => {
-  const window = jsdom.jsdom('<html><body></body></html>', clone(defaultJsdomConfig)).defaultView;
+const createWindow = userJsdomConfig => {
+  const jsdomConfig = Object.assign({}, userJsdomConfig, defaultJsdomConfig);
 
-  return Object
-    .getOwnPropertyNames(window)
-    .filter(prop => typeof global[prop] !== 'undefined');
-})();
+  return jsdom.jsdom('<html><body></body></html>', clone(jsdomConfig)).defaultView;
+};
+
+const protectedproperties = (() => Object
+  .getOwnPropertyNames(createWindow())
+  .filter(prop => typeof global[prop] !== 'undefined')
+)();
 
 module.exports = (...args) => {
   const properties = args.filter(arg => Array.isArray(arg))[0];
   const userJsdomConfig = args.filter(arg => !Array.isArray(arg))[0];
 
-  const jsdomConfig = Object.assign({}, userJsdomConfig, defaultJsdomConfig);
-
-  const window = jsdom.jsdom('<html><body></body></html>', clone(jsdomConfig)).defaultView;
+  const window = createWindow(userJsdomConfig);
 
   Object
     .getOwnPropertyNames(window)
