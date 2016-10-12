@@ -1,6 +1,6 @@
 {
   "name": "browser-env",
-  "version": "2.0.10",
+  "version": "2.0.11",
   "description": "Simulates a global browser environment using jsdom",
   "main": "src/index.js",
   "engines": {
