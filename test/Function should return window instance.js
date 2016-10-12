@@ -1,5 +1,5 @@
 import test from 'ava';
-import browserEnv from '../dist';
+import browserEnv from '../src';
 
 test(t => {
   const returnValue = browserEnv();

@@ -4,6 +4,6 @@ import test from 'ava';
 // globals first
 test(t => {
   global.document = false;
-  require('../dist')();
+  require('../src')();
   t.is(document, false);
 });
