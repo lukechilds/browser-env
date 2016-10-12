@@ -4,7 +4,7 @@
 
 Previously named `node-browser-environment`.
 
-This allows you to run browser modules in node with minimal or no effort. Can also be used to test browser modules with any node test framework. Please note, only the DOM is simulated, if you want to run a module that requires more advanced browser features (like `localStorage`), you'll need to polyfill that seperately.
+This allows you to run browser modules in node 4 or newer with minimal or no effort. Can also be used to test browser modules with any node test framework. Please note, only the DOM is simulated, if you want to run a module that requires more advanced browser features (like `localStorage`), you'll need to polyfill that seperately.
 
 ## Install
 
