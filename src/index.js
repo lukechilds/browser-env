@@ -21,7 +21,7 @@ const createWindow = userJsdomConfig => {
   return jsdom.jsdom('<html><body></body></html>', clone(jsdomConfig)).defaultView;
 };
 
-// IIFE executed on import to return an array of global node properties that
+// IIFE executed on import to return an array of global Node.js properties that
 // conflict with global browser properties.
 const protectedproperties = (() => Object
   .getOwnPropertyNames(createWindow())
@@ -48,7 +48,7 @@ module.exports = function browserEnv() {
     // If we're only applying specific required properties remove everything else
     .filter(prop => !(properties && properties.indexOf(prop) === -1))
 
-    // Copy what's left to node's global scope
+    // Copy what's left to the Node.js global scope
     .forEach(prop => global[prop] = window[prop]);
 
   // Return reference to original window object

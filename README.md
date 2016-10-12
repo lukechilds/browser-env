@@ -4,7 +4,7 @@
 
 Previously named `node-browser-environment`.
 
-This allows you to run browser modules in node 4 or newer with minimal or no effort. Can also be used to test browser modules with any node test framework. Please note, only the DOM is simulated, if you want to run a module that requires more advanced browser features (like `localStorage`), you'll need to polyfill that seperately.
+This allows you to run browser modules in Node.js 4 or newer with minimal or no effort. Can also be used to test browser modules with any Node.js test framework. Please note, only the DOM is simulated, if you want to run a module that requires more advanced browser features (like `localStorage`), you'll need to polyfill that seperately.
 
 ## Install
 
@@ -24,7 +24,7 @@ npm install --save-dev browser-env
 // Init
 require('browser-env')();
 
-// Now you have access to a browser like environment in node:
+// Now you have access to a browser like environment in Node.js:
 
 typeof window;
 // 'object'
@@ -39,7 +39,7 @@ div instanceof HTMLElement
 // true
 ```
 
-By default everything in the `jsdom` window namespace is tacked on to the node global namespace (excluding existing node properties e.g `console`, `setTimout`). If you want to trim this down you can pass an array of required properties:
+By default everything in the `jsdom` window namespace is tacked on to the Node.js global namespace (excluding existing Node.js properties e.g `console`, `setTimout`). If you want to trim this down you can pass an array of required properties:
 
 ```js
 // Init
