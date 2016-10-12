@@ -23,7 +23,10 @@
     ]
   },
   "eslintConfig": {
-    "extends": "lukechilds"
+    "extends": "lukechilds",
+    "rules": {
+      "prefer-rest-params": "off"
+    }
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,5 @@
-import jsdom from 'jsdom';
-import clone from 'clone';
+const jsdom = require('jsdom');
+const clone = require('clone');
 
 // Default jsdom config.
 // These settings must override any custom settings to make sure we can iterate
@@ -29,9 +29,10 @@ const protectedproperties = (() => Object
 )();
 
 // Sets up global browser environment
-module.exports = (...args) => {
+module.exports = function browserEnv() {
 
   // Extract options from args
+  const args = Array.from(arguments);
   const properties = args.filter(arg => Array.isArray(arg))[0];
   const userJsdomConfig = args.filter(arg => !Array.isArray(arg))[0];
 
