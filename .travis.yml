@@ -1,5 +1,8 @@
 language: node_js
-node_js: node
+node_js:
+  - '6'
+  - '5'
+  - '4'
 script: npm run lint && npm test
 after_success: npm run coverage
 notifications:
