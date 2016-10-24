@@ -6,6 +6,10 @@ Previously named `node-browser-environment`.
 
 This allows you to run browser modules in Node.js 4 or newer with minimal or no effort. Can also be used to test browser modules with any Node.js test framework. Please note, only the DOM is simulated, if you want to run a module that requires more advanced browser features (like `localStorage`), you'll need to polyfill that seperately.
 
+> ❗️**Important note**
+>
+> This module adds properties from the `jsdom` window namespace to the Node.js global namespace. This is explicitly [recommended against](https://github.com/tmpvar/jsdom/wiki/Don't-stuff-jsdom-globals-onto-the-Node-global) by `jsdom`. There may be scenarios where this is ok for your use case but please read through linked wiki page and make sure you understand the caveats.
+
 ## Install
 
 ```shell
