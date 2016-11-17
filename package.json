@@ -40,7 +40,7 @@
     "jsdom": "9.8.3"
   },
   "devDependencies": {
-    "ava": "^0.15.2",
+    "ava": "^0.17.0",
     "coveralls": "^2.11.13",
     "eslint": "^3.5.0",
     "eslint-config-lukechilds": "^1.9.0",
