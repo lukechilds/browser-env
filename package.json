@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/lukechilds/browser-env#readme",
   "dependencies": {
-    "clone": "2.0.0",
+    "clone": "2.1.0",
     "jsdom": "9.8.3"
   },
   "devDependencies": {
