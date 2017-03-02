@@ -5,5 +5,6 @@ import browserEnv from '../src';
 test(t => {
   browserEnv();
   const properties = Object.getOwnPropertyNames(window);
-  t.deepEqual(properties, expectedProperties);
+  const order = (a, b) => a > b;
+  t.deepEqual(properties.sort(order), expectedProperties.sort(order));
 });
