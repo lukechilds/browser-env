@@ -1,5 +1,4 @@
-const jsdom = require('jsdom');
-const clone = require('clone');
+const Window = require('window');
 
 // Default jsdom config.
 // These settings must override any custom settings to make sure we can iterate
@@ -11,20 +10,10 @@ const defaultJsdomConfig = {
   }
 };
 
-// Function to return a window object.
-// Accepts a jsdom config object that will be merged with the default options.
-// Config object must be cloned before passing through otherwise jsdom will add
-// lots of properties to the original reference.
-const createWindow = userJsdomConfig => {
-  const jsdomConfig = Object.assign({}, userJsdomConfig, defaultJsdomConfig);
-
-  return jsdom.jsdom('<html><body></body></html>', clone(jsdomConfig)).defaultView;
-};
-
 // IIFE executed on import to return an array of global Node.js properties that
 // conflict with global browser properties.
 const protectedproperties = (() => Object
-  .getOwnPropertyNames(createWindow())
+  .getOwnPropertyNames(new Window(defaultJsdomConfig))
   .filter(prop => typeof global[prop] !== 'undefined')
 )();
 
@@ -37,7 +26,7 @@ module.exports = function browserEnv() {
   const userJsdomConfig = args.filter(arg => !Array.isArray(arg))[0];
 
   // Create window object
-  const window = createWindow(userJsdomConfig);
+  const window = new Window(Object.assign({}, userJsdomConfig, defaultJsdomConfig));
 
   // Get all global browser properties
   Object.getOwnPropertyNames(window)
