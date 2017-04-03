@@ -8,7 +8,7 @@ This allows you to run browser modules in Node.js 4 or newer with minimal or no 
 
 > ❗️**Important note**
 >
-> This module adds properties from the `jsdom` window namespace to the Node.js global namespace. This is explicitly [recommended against](https://github.com/tmpvar/jsdom/wiki/Don't-stuff-jsdom-globals-onto-the-Node-global) by `jsdom`. There may be scenarios where this is ok for your use case but please read through the linked wiki page and make sure you understand the caveats.
+> This module adds properties from the `jsdom` window namespace to the Node.js global namespace. This is explicitly [recommended against](https://github.com/tmpvar/jsdom/wiki/Don't-stuff-jsdom-globals-onto-the-Node-global) by `jsdom`. There may be scenarios where this is ok for your use case but please read through the linked wiki page and make sure you understand the caveats. If you don't need the browser environment enabled globally, [`window`](https://github.com/lukechilds/window) may be a better solution.
 
 ## Install
 
