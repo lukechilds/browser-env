@@ -1,7 +1,7 @@
 language: node_js
 node_js:
+  - 'node'
   - '6'
-  - '5'
   - '4'
 script: npm run lint && npm test
 after_success: npm run coverage
