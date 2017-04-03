@@ -78,6 +78,10 @@ import browserEnv from 'browser-env';
 browserEnv();
 ```
 
+## Related
+
+- [`window`](https://github.com/lukechilds/window) - Exports a jsdom window object
+
 ## License
 
 MIT © Luke Childs
