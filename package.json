@@ -39,7 +39,7 @@
     "window": "3.1.4"
   },
   "devDependencies": {
-    "ava": "^0.18.0",
+    "ava": "^0.19.0",
     "coveralls": "^2.11.13",
     "eslint": "^3.5.0",
     "eslint-config-lukechilds": "^1.9.0",
