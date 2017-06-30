@@ -7,9 +7,9 @@
 [![npm](https://img.shields.io/npm/dm/browser-env.svg)](https://www.npmjs.com/package/browser-env)
 [![npm](https://img.shields.io/npm/v/browser-env.svg)](https://www.npmjs.com/package/browser-env)
 
-This allows you to run browser modules in Node.js 4 or newer with minimal or no effort. Can also be used to test browser modules with any Node.js test framework. Please note, only the DOM is simulated, if you want to run a module that requires more advanced browser features (like `localStorage`), you'll need to polyfill that seperately.
+This allows you to run browser modules in Node.js 6 or newer with minimal or no effort. Can also be used to test browser modules with any Node.js test framework. Please note, only the DOM is simulated, if you want to run a module that requires more advanced browser features (like `localStorage`), you'll need to polyfill that seperately.
 
-Requires Node.js v6 or newer, use `browser-env@2` to support older Node.js versions.
+Use `browser-env@2` to support older Node.js versions.
 
 > ❗️**Important note**
 >
