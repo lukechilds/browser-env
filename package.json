@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/lukechilds/browser-env#readme",
   "dependencies": {
-    "window": "4.2.2"
+    "window": "4.2.3"
   },
   "devDependencies": {
     "ava": "^0.23.0",
