@@ -42,6 +42,6 @@
     "coveralls": "^3.0.0",
     "eslint-config-xo-lukechilds": "^1.0.0",
     "nyc": "^11.0.2",
-    "xo": "^0.18.2"
+    "xo": "^0.20.0"
   }
 }
