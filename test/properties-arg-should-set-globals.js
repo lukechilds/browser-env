@@ -1,7 +1,7 @@
 import test from 'ava';
 import browserEnv from '../src';
 
-test(t => {
+test('Properties arg should set globals', t => {
 	t.is(typeof window, 'undefined');
 	t.is(typeof document, 'undefined');
 	t.is(typeof navigator, 'undefined');
