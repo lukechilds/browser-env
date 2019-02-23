@@ -35,10 +35,13 @@ const browserEnv = function (...args) {
 		// If we're only applying specific required properties remove everything else
 		.filter(prop => !properties || properties.includes(prop))
 
-		// Copy what's left to the Node.js global scope
-		.forEach(prop => {
-			global[prop] = window[prop];
-		});
+    // Copy what's left to the Node.js global scope
+    .forEach(prop => {
+	Object.defineProperty(global, prop, {
+		configurable: true,
+		get: () => window[prop]
+	});
+});
 
 	// Return reference to original window object
 	return window;
