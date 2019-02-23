@@ -38,7 +38,10 @@ const browserEnv = function () {
 
     // Copy what's left to the Node.js global scope
     .forEach(prop => {
-	global[prop] = window[prop];
+	Object.defineProperty(global, prop, {
+		configurable: true,
+		get: () => window[prop]
+	});
 });
 
   // Return reference to original window object
