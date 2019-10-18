@@ -1,4 +1,4 @@
 'use strict';
-const browserEnv = require('browser-env');
+const browserEnv = require('.');
 
 browserEnv();
