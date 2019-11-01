@@ -1,5 +1,5 @@
-import test from 'ava';
 import { spawnSync } from 'child_process';
+import test from 'ava';
 
 test(t => {
 	const { stdout } = spawnSync('node', [
