@@ -32,8 +32,6 @@ npm install --save-dev browser-env
 ```js
 // Init
 require('browser-env')();
-// or
-require('browser-env/register');
 
 // Now you have access to a browser like environment in Node.js:
 
@@ -83,6 +81,12 @@ browserEnv();
 
 import browserEnv from 'browser-env';
 browserEnv();
+```
+
+`browser-env` can also be required directly by node as:
+
+```sh
+node -r browser-env/require test.js
 ```
 
 ## Related
