@@ -83,7 +83,7 @@ import browserEnv from 'browser-env';
 browserEnv();
 ```
 
-`browser-env` can also be required directly by node as:
+`browser-env` can also be preloaded at startup node as:
 
 ```sh
 node -r browser-env/require test.js
