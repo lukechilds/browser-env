@@ -1,11 +1,11 @@
 import test from 'ava';
-import execa from 'execa';
+import { spawnSync } from 'child_process';
 
-test(async t => {
-	const { stdout } = await execa('node', [
+test(t => {
+	const { stdout } = spawnSync('node', [
 		'-r', '../register',
 		'--eval', 'console.log(typeof window)'
 	]);
 
-	t.not(stdout, 'undefined');
+	t.not(stdout.toString(), 'undefined');
 });
