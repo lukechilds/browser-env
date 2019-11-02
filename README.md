@@ -83,10 +83,10 @@ import browserEnv from 'browser-env';
 browserEnv();
 ```
 
-`browser-env` can also be preloaded at startup node as:
+`browser-env` can also be preloaded at node startup as:
 
 ```sh
-node -r browser-env/require test.js
+node -r browser-env/register test.js
 ```
 
 ## Related
