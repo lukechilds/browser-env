@@ -83,6 +83,12 @@ import browserEnv from 'browser-env';
 browserEnv();
 ```
 
+`browser-env` can also be preloaded at node startup as:
+
+```sh
+node -r browser-env/register test.js
+```
+
 ## Related
 
 - [`window`](https://github.com/lukechilds/window) - Exports a jsdom window object
