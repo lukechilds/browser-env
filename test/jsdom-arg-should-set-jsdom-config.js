@@ -1,7 +1,7 @@
 import test from 'ava';
 import browserEnv from '../src';
 
-test(t => {
+test('JsDOM arg should set JsDOM config', t => {
 	const userAgent = 'Custom user agent';
 	t.is(typeof navigator, 'undefined');
 	browserEnv(['navigator'], { userAgent });
