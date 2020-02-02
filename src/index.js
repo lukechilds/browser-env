@@ -38,6 +38,10 @@ const browserEnv = function () {
 
     // Copy what's left to the Node.js global scope
     .forEach(prop => {
+	// for fixing https://github.com/lukechilds/browser-env/issues/77
+	if (['Infinity', 'NaN', 'undefined'].includes(prop)) {
+		return
+	}
 	Object.defineProperty(global, prop, {
 		configurable: true,
 		get: () => window[prop]
